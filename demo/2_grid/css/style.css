@@ -1,0 +1,146 @@
+/* base */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 30px;
+  background-color: #f6f7fb;
+  color: #333333;
+  /*emは親要素の倍率、remはroot要素の倍率指定*/
+  font-size: 1.2rem;
+  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
+    helvetica, arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* layout */
+
+.item {
+  width: 180px;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-bottom: 3px solid;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.item__category {
+  margin: 15px 9px 10px;
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.item__category::before {
+  content: '';
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  border: 2px solid;
+  border-radius: 50%;
+  vertical-align: -5px;
+}
+
+.item__image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.item__description {
+  margin: 10px;
+  line-height: 1.5;
+}
+
+.item > a {
+  display: block;
+  margin: -8px -8px -11px;
+  padding: 8px 8px 11px;
+  border-radius: inherit;
+  color: #777;
+  /* transition: all 0.3s; */
+}
+
+.item > a:hover {
+  /* box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
+  opacity: 0.7; */
+}
+
+.item-maindish {
+  border-color: #ffc0cb;
+}
+
+.item-maindish .item__category::before {
+  border-color: #ffc0cb;
+}
+
+.item-appetizzer {
+  border-color: #76c047;
+}
+
+.item-appetizzer .item__category::before {
+  border-color: #76c047;
+}
+
+.item-column {
+  border-color: #fff100;
+}
+
+.item-column .item__category::before {
+  border-color: #fff100;
+}
+
+.item-m {
+  width: 364px;
+}
+
+.item-l {
+  width: 732px;
+}
+
+/* hover 表示*/
+.item::before {
+  content: 'MORE';
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 150%;
+
+  width: 100px;
+  padding: 5px 10px;
+
+  text-align: center;
+
+  color: #fff;
+  font-weight: bold;
+  border: solid 3px #fff;
+
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.item:hover::before {
+  opacity: 1;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.item-m::before {
+  top: 100px;
+}
+.item-l::before {
+  top: 200px;
+}

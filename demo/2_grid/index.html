@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>グリッドレイアウト</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-------------- l box ---------------->
+    <section class="item item-column item-l">
+        <a href="#">
+            <img class="item__image" src="./images/image-l1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+    <!--------- mbox --------->
+
+    <section class="item item-column item-m">
+        <a href="#">
+            <img class="item__image" src="./images/image-m1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+    <!--------- mbox --------->
+
+    <section class="item item-column item-m">
+        <a href="#">
+            <img class="item__image" src="./images/image-m1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+
+    <!-- s box -->
+    <section class="item item-appetizzer">
+        <a href="#">
+            <img class="item__image" src="./images/image1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-maindish">
+        <a href="#">
+            <img class="item__image" src="./images/image2.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-column">
+        <a href="#">
+            <img class="item__image" src="./images/image3.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+    <!-- s box -->
+    <section class="item item-appetizzer">
+        <a href="#">
+            <img class="item__image" src="./images/image1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-maindish">
+        <a href="#">
+            <img class="item__image" src="./images/image2.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-column">
+        <a href="#">
+            <img class="item__image" src="./images/image3.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+    <!-- s box -->
+    <section class="item item-appetizzer">
+        <a href="#">
+            <img class="item__image" src="./images/image1.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-maindish">
+        <a href="#">
+            <img class="item__image" src="./images/image2.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+    <!-- s box -->
+    <section class="item item-column">
+        <a href="#">
+            <img class="item__image" src="./images/image3.png" alt="">
+            <div class="item__category">MAIN DISH</div>
+            <p class="item__description">あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。あいうえお。</p>
+        </a>
+    </section>
+
+
+
+
+    <!-------------------- Script -------------------->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script>
+        new Masonry('body', {
+            itemSelector: '.item',
+            columnWidth: 180,
+            gutter: 4
+        });
+    </script>
+</body>
+
+</html>
