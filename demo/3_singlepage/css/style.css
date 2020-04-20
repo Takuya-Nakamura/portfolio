@@ -1,0 +1,271 @@
+/* base */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* 縦・横 */
+  padding: 30px 0px;
+  background-color: #f6f7fb;
+  color: #333333;
+  /*emは親要素の倍率、remはroot要素の倍率指定*/
+  font-size: 1.2rem;
+
+  /* font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
+    helvetica, arial, sans-serif; */
+
+  font-family: 'Raleway', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic',
+    knowledge-reg, helvetica, arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* layout */
+body {
+  background: repeat url('../images/dark-wood_mini.png');
+  /* background: url('../images/dark-wood_mini.png') repeat fixed left bottom; */
+  color: #fff;
+  text-align: center;
+}
+
+.header {
+  /* 上　左右 下 */
+  padding: 170px 30px 80px;
+}
+
+.site-title-sub {
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+}
+
+.site-title-sub::before,
+.site-title-sub::after {
+  content: '';
+  display: inline-block;
+  width: 140px;
+  height: 2px;
+  margin: 0 30px;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.site-title {
+  margin: 50px 0 40px;
+  font-size: 7.6rem;
+}
+
+.site-description {
+  margin-bottom: 50px;
+  color: #888;
+  font-size: 1.6rem;
+}
+
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #afa58d;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.button_showy {
+  background-color: #f1b400;
+}
+
+/* about */
+.about {
+  padding: 80px 30px;
+  background-color: #fff;
+  color: #333333;
+}
+
+.heading {
+  margin: 30px 0 15px;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.heading::before,
+.heading::after {
+  content: '';
+  border-bottom: 1px solid #999;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.heading::before {
+  bottom: 5px;
+}
+
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+}
+
+/* Works */
+.works {
+  background-color: #383634;
+  background: repeat url('../images/dark-wood_mini.png');
+
+  padding: 80px 0;
+}
+
+.works-wrapper {
+  display: table;
+  width: 100%;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+
+.work-box {
+  display: table-cell;
+}
+
+.work-text {
+  padding: 10px;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.work-text .button {
+  width: 60%;
+  margin-top: 20px;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px #fff solid;
+
+}
+
+.work-text .button:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+
+}
+
+.work-image {
+  display: block;
+  width: 100%;
+  /* padding: 10px; */
+
+}
+
+/* skill */
+.skill {
+  padding: 80px 0;
+  background-color: #fff;
+  color: #333333;
+
+
+}
+
+.skill-wrapper {
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+
+
+}
+
+.skill-box {
+  display: table-cell;
+}
+
+.skill-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+
+  border: 4px solid;
+  border-radius: 50%;
+  color: #f1b400;
+  font-size: 8rem;
+}
+
+.skill-icon:before {
+  line-height: 142px;
+
+}
+
+.skill-title {
+  font-size: 2rem;
+}
+
+.skill-text {
+  padding: 5px 10px;
+  line-height: 1.5;
+
+}
+
+/* contact */
+.contact {
+  background: repeat url('../images/dark-wood_mini.png');
+
+}
+
+.contact-form {
+  width: 50%;
+  margin: 50px auto 0;
+}
+
+.contact-form input[type=text],
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input[type=submit] {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  /* color: #fff; */
+  cursor: pointer;
+}
+
+/* footer */
+.footer {
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
