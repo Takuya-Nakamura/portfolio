@@ -153,20 +153,17 @@ body {
   padding: 3px;
   background-color: rgba(0, 0, 0, 0);
   border: 1px #fff solid;
-
 }
 
 .work-text .button:hover {
   opacity: 0.5;
   transition: 0.3s;
-
 }
 
 .work-image {
   display: block;
   width: 100%;
   /* padding: 10px; */
-
 }
 
 /* skill */
@@ -174,8 +171,6 @@ body {
   padding: 80px 0;
   background-color: #fff;
   color: #333333;
-
-
 }
 
 .skill-wrapper {
@@ -183,8 +178,6 @@ body {
   width: 80%;
   margin: 50px auto 0;
   table-layout: fixed;
-
-
 }
 
 .skill-box {
@@ -204,7 +197,6 @@ body {
 
 .skill-icon:before {
   line-height: 142px;
-
 }
 
 .skill-title {
@@ -214,13 +206,11 @@ body {
 .skill-text {
   padding: 5px 10px;
   line-height: 1.5;
-
 }
 
 /* contact */
 .contact {
   background: repeat url('../images/dark-wood_mini.png');
-
 }
 
 .contact-form {
@@ -228,7 +218,7 @@ body {
   margin: 50px auto 0;
 }
 
-.contact-form input[type=text],
+.contact-form input[type='text'],
 .contact-form textarea {
   display: block;
   width: 100%;
@@ -242,7 +232,7 @@ body {
   outline: none;
 }
 
-.contact-form input[type=text]:focus,
+.contact-form input[type='text']:focus,
 .contact-form textarea:focus {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) inset;
 }
@@ -251,7 +241,7 @@ body {
   height: 150px;
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type='submit'] {
   display: block;
   width: 200px;
   margin: 40px auto 0;
@@ -268,4 +258,71 @@ body {
 .footer {
   padding: 12px 0;
   font-size: 1.3rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .site-title-sub::before,
+  .site-title-sub::after {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .site-title {
+    font-size: 6rem;
+  }
+  .site-title-sub {
+    font-size: 1.7rem;
+  }
+
+  .header {
+    padding-top: 60px;
+  }
+
+  a.button {
+    margin: 10px auto;
+  }
+
+  .works-wrapper,
+  .work-box {
+    display: block;
+  }
+
+  .work-box {
+    background-image: url('../images/capture_1.png');
+    background-size: cover;
+  }
+
+  .work-text .button {
+    display: block;
+  }
+  .work-image {
+    display: none;
+  }
+
+  /* skill */
+  .skill-wrapper,
+  .skill-box {
+    display: block;
+  }
+  .skill-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    font-size: 5rem;
+  }
+  .skill-icon:before {
+    line-height: 92px;
+  }
+  .skill-box {
+    margin: 20px auto;
+  }
+  .skill-text {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
 }
