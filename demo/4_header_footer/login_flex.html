@@ -32,14 +32,23 @@
 
     <main>
         <div class="main-contents">
+            <h1>ユーザー登録</h1>
+            <div class="error-msg">
+                <p>メールアドレスを入力してください</p>
+                <p>パスワードを入力してください</p>
+            </div>
+
+            <form>
+                <input type="text" placeholder="メールアドレスを入力してください" />
+                <input type="text" placeholder="パスワードを入力してください" />
+                <input type="submit" value="新規登録" />
+            </form>
         </div>
 
     </main>
     <footer>
         <p>copy light text</p>
     </footer>
-
-
     <!-- drawer -->
     <div class="drawer close" id="drawer">
         <ul>
@@ -50,23 +59,24 @@
         </ul>
     </div>
 
-    <div class="cover" onclick="closeDrawer()"></div>
+    <div class="cover" onclick="closeDrawer()">test</div>
+    <script>
+        const openDrawer = () => {
+            $(".drawer").removeClass('close')
+            $(".drawer").addClass('open')
+            $(".cover").removeClass('hidden')
+            $(".cover").addClass('show')
+        }
+        const closeDrawer = () => {
+            $(".drawer").removeClass('open')
+            $(".drawer").addClass('close')
+
+            $(".cover").addClass('hidden')
+            $(".cover").removeClass('show')
+        }
+    </script>
+
+
 </body>
-
-<script>
-    const openDrawer = () => {
-        $(".drawer").removeClass('close')
-        $(".drawer").addClass('open')
-        $(".cover").removeClass('hidden')
-        $(".cover").addClass('show')
-    }
-    const closeDrawer = () => {
-        $(".drawer").removeClass('open')
-        $(".drawer").addClass('close')
-
-        $(".cover").addClass('hidden')
-        $(".cover").removeClass('show')
-    }
-</script>
 
 </html>
