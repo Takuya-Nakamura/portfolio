@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>reminder | LureBox</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style_login_flex.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="flex">
+        <div class="header-left flex-item">
+            <i class="fas fa-bars menu" onclick="openDrawer()"></i>
+        </div>
+
+
+        <div class="header-logo flex-item">
+            <img class="logo" src="./images/box.png" alt="logo">
+            <p>LureBox</p>
+        </div>
+
+        <div class="header-menu flex-item">
+        </div>
+
+    </header>
+
+    <main>
+        <div class="main-contents">
+            <h1>パスワードを忘れたら</h1>
+            <div class="error-msg">
+                <p>メールアドレスを入力してください</p>
+            </div>
+
+            <form>
+                <input type="text" placeholder="登録したメールアドレスを入力してください" />
+                <input type="submit" value="メールを送信する"" />
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <p>copy light text</p>
+    </footer>
+    <!-- drawer -->
+    <div class=" drawer close" id="drawer">
+                <ul>
+                    <li onclick="closeDrawer()"><i class="fas fa-times close-drawer"></i></li>
+                    <li><a href="">SingUp</a></li>
+                    <li><a href="">SingIn</a></li>
+                    <li><a href="">MyPage</a></li>
+                </ul>
+        </div>
+
+        <div class="cover" onclick="closeDrawer()">test</div>
+        <script>
+            const openDrawer = () => {
+                $(".drawer").removeClass('close')
+                $(".drawer").addClass('open')
+                $(".cover").removeClass('hidden')
+                $(".cover").addClass('show')
+            }
+            const closeDrawer = () => {
+                $(".drawer").removeClass('open')
+                $(".drawer").addClass('close')
+
+                $(".cover").addClass('hidden')
+                $(".cover").removeClass('show')
+            }
+        </script>
+
+
+</body>
+
+</html>
