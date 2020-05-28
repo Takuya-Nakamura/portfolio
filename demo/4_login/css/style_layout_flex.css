@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
 
 /* base */
 .clearfix::after {
@@ -12,12 +14,11 @@ body {
   /* 縦・横 */
   /* padding: 30px 0px; */
   color: #333333;
-  /*emは親要素の倍率、remはroot要素の倍率指定*/
-  /* font-size: 1.2rem; */
+  /* font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
+    helvetica, arial, sans-serif; */
+  font-family: "M PLUS Rounded 1c";
 
-  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
-    helvetica, arial, sans-serif;
-
+  /* font-family: "Sawarabi"; */
 }
 
 *,
@@ -99,7 +100,7 @@ header.image {
 /* main */
 main {
   padding: 50px 15px;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   min-height: 300px;
 }
 
@@ -188,4 +189,69 @@ footer {
 
 .hidden {
   display: none;
+}
+
+/**************/
+/* 中央寄せ */
+/**************/
+
+.center-contents {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.center-contents h1 {
+  margin-bottom: 30px;
+}
+
+/**************/
+/* components */
+/**************/
+
+/* text form */
+.form-text {
+  display: block;
+  margin: 0 auto 25px;
+  width: 100%;
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+/* submit button */
+.form-submit {
+  display: block;
+  margin: 0 auto 25px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #3A3A3A;
+  color: white;
+
+}
+
+/* select */
+.form-select {
+  padding: 2px;
+  font-size: 0.8rem;
+  background-color: wihte;
+  border: 1px solid black;
+}
+
+.error-msg {
+  background-color: #FFD7D7;
+  color: red;
+  border: tomato 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  margin: 0 auto 25px;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.error-msg p {
+  margin: 5px 0px;
 }

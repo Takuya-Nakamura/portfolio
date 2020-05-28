@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap');
+@import url('./style_layout_flex.css');
+
+/* main */
+
+
+/* lures */
+
+.center-contents {
+  text-align: left;
+}
+
+.lure-form label {
+  display: block;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.lure-form .top-label {
+  margin-bottom: 10px;
+}
+
+
+.lure-image {
+  width: 225px;
+  height: 225px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.lure-form-text {
+  display: block;
+  flex: 1;
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+.lure-form-length {
+  flex: 0;
+  width: 50px;
+  text-align: center;
+  margin-right: 2px;
+}
+
+.unit-label {
+  width: 15px;
+  font-size: 0.8rem;
+}
+
+span+.lure-form-length {
+  margin-left: 10px;
+}
+
+.lure-form .row {
+  display: flex;
+}
+
+.lure-left {
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.lure-right {
+  flex: 1;
+}
+
+.lure-form .form-text {
+  margin-bottom: 0px;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+
+.fa-star {
+  color: orange;
+}
+
+.fa-heart {
+  color: pink;
+}
+
+.form-item label {
+  width: 70px;
+}
+
+.form-count {
+  width: 40px;
+  display: block;
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  text-align: center;
+
+}
+
+.form-wide {
+  margin-bottom: 20px
+}
+
+.lure-form .have,
+.lure-form .lost,
+.lure-form .hit {
+  max-width: 50px;
+  align-items: left;
+}
+
+.form-date {
+  width: 100%;
+}
+
+.plus-btn,
+.minus-btn {
+  margin: 0 5px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: pink;
+  color: white;
+}
+
+.how-text-list {
+  list-style-position: inside;
+  padding: 0.25em;
+  list-style-type: none;
+}
+
+.how-text {
+  position: relative;
+  padding: 0.25em 0em 0.25em 1em;
+  font-size: 0.7rem;
+}
+
+.how-text+.how-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.how-text:before {
+  position: absolute;
+  content: '';
+  top: 0.25em;
+  left: 0.2em;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent slategray;
+}
+
+.lure-form textarea {
+  margin-bottom: 10px;
+}
+
+.lure-form .fa-times-circle {
+  margin-left: 5px;
+}
+
+/* tag */
+.tag-area {
+  margin-top: 10px;
+}
+
+.tag {
+  /* display: inline-block; */
+  /* border: 1px solid #000; */
+
+  background-color: skyblue;
+  color: white;
+
+  padding: 3px 5px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+
+}
+
+.tag.off {
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+}

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap');
+@import url(http://fonts.googleapis.com/earlyaccess/hannari.css);
+
 
 /* base */
 .clearfix::after {
@@ -15,8 +17,10 @@ body {
   /*emは親要素の倍率、remはroot要素の倍率指定*/
   /* font-size: 1.2rem; */
 
-  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
-    helvetica, arial, sans-serif;
+  /* font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Pgothic', knowledge-reg,
+    helvetica, arial, sans-serif; */
+
+  font-family: "Hannari;
 
 }
 
