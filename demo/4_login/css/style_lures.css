@@ -101,7 +101,7 @@ span+.lure-form-length {
 }
 
 .form-wide {
-  margin-bottom: 20px
+  margin-bottom: 30px
 }
 
 .lure-form .have,
@@ -159,6 +159,11 @@ span+.lure-form-length {
 
 .lure-form .fa-times-circle {
   margin-left: 5px;
+}
+
+.lure-form .image_preview {
+  width: 50px;
+
 }
 
 /* tag */
