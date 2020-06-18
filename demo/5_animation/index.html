@@ -1,0 +1,132 @@
+<html>
+
+<head> </head>
+
+<body>
+  <div class="center">
+    <h1>[open box]</h1>
+    <div>
+      箱の蓋が開くようなアニメーションを実現したい。蓋とする画像をX軸方向に回転させると箱を開けたような..
+    </div>
+
+    <div class="image-wrapper">
+      <img class="image under" src="./images/regwarm.png" alt="" />
+      <!-- <img class="image rotate-anime over" src="./images/lure1.png" alt=""> -->
+      <div class="image rotate-anime over"></div>
+    </div>
+
+    <div class="lurebox-wrapper">
+      <img class="box-under" src="./images/box_under.png" alt="" />
+      <div class="box-cover-wrapper">
+        <img class="box-cover" src="./images/box_cover.png" alt="" />
+      </div>
+      <div class="thick"></div>
+    </div>
+
+    <!-- 2枚重ねて回転させる -->
+    <!-- <div class="lurebox-wrapper">
+        <img class="box-under" src="./images/box_under.png" alt="" />
+        <div class="box-cover-double">
+          <img src="./images/box_cover.png" alt="" />
+          <div class="rotate-anime-under cover-under"></div>
+        </div>
+      </div> -->
+  </div>
+</body>
+<style>
+  .center {
+    width: 600px;
+    margin: 0 auto;
+    /* background-color: #dfdfdf; */
+    padding: 10px;
+  }
+
+  .image-wrapper {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .image {
+    padding: 5px;
+    background-color: cadetblue;
+    width: 200px;
+    height: 200px;
+  }
+
+  .rotate-anime {
+    transform-origin: top;
+    animation: rotate-anime 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate-anime {
+    0% {
+      /* transform: rotateX(0deg) translateY(0); */
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+
+    99% {
+      opacity: 1;
+    }
+
+    100% {
+      /* transform: rotateX(180deg) translateY(200px); */
+      transform: rotateX(180deg);
+      opacity: 0;
+    }
+  }
+
+  .over {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .lurebox-wrapper {
+    position: relative;
+  }
+
+  .box-cover {
+    display: block;
+    transform-origin: top;
+    backface-visibility: hidden;
+    /* animation: rotate-anime 1.5s ease-in-out infinite; */
+  }
+
+  .box-under {
+    position: absolute;
+    top: 0;
+  }
+
+  /* .box-cover-double {
+      transform-origin: top;
+      animation: rotate-anime 1.5s ease-in-out infinite;
+    } */
+
+  /* .cover-under {
+      width: 300px;
+      height: 300px;
+      background-color: #ddd;
+      position: absolute;
+      top: 0;
+      z-index: -5;
+    } */
+
+  .box-cover-wrapper {
+    transform-origin: top;
+    animation: rotate-anime 1.5s ease-in-out infinite;
+    /* backface-visibility: hidden; */
+  }
+
+  .box-cover-wrapper::after {
+    display: block;
+    content: '';
+    background-color: red;
+    height: 50px;
+    width: 100%;
+    transform: rotateY(45deg);
+    /* animation: rotate-anime 1.5s ease-in-out infinite; */
+  }
+</style>
+
+</html>

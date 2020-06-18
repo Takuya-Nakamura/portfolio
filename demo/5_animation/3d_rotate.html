@@ -1,0 +1,331 @@
+<html>
+
+<head> </head>
+
+<body>
+  <div class="center">
+
+    <div class="sample1">
+      <div>
+        立体を描画し回転させたい。要素の厚みを表現したい。また、裏を見えないようにしたい。
+        ⇒※transformする要素軍を囲むdivで「transform-style:preserve-3d; 」を指定すると、
+        要素が立体的に重なる。perspectiveも使えそうだけど、今回は使わなくて良さそう。
+        http://www.htmq.com/css3/perspective.shtml
+      </div>
+
+      <div class="css-cube">
+        <div class="css-face css-forward">1</div>
+        <div class="css-face css-reverse">6</div>
+        <div class="css-face css-right">3</div>
+        <div class="css-face css-left">4</div>
+        <div class="css-face css-top">5</div>
+        <div class="css-face css-bottom">2</div>
+      </div>
+      <style>
+        .center {
+          width: 600px;
+          margin: 0 auto;
+          /* background-color: #dfdfdf; */
+          padding: 10px;
+        }
+
+
+        /*  */
+        .css-cube {
+          /* 立体の大きさ傾きの指定 */
+          width: 100px;
+          height: 100px;
+          margin: 5%;
+          border: none;
+          /* 重要３Ｄで表示。transform-styleが重要。 */
+          transform-style: preserve-3d;
+          /* transform: rotateY(-30deg) rotateX(-30deg) rotateZ(10deg); */
+          /* 立体の傾き */
+          display: inline-block;
+          animation: cubeAnime 2s linear infinite;
+
+        }
+
+        @keyframes cubeAnime {
+
+          /* 回転方向の指定 */
+          50% {
+            /* transform: rotateY(-30deg) rotateX(-30deg) rotateZ(10deg); */
+            transform: rotateX(30deg);
+          }
+
+          100% {
+            /* transform: rotateY(-30deg) rotateX(330deg) rotateZ(10deg); */
+            transform: rotateX(300deg);
+          }
+        }
+
+        .css-face {
+          /* 各面の指定 */
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          border: 1px solid black;
+          line-height: 100px;
+          font-size: 50px;
+          color: black;
+          text-align: center;
+          opacity: 0.5;
+          /* 透明度を指定 */
+          backface-visibility: visible;
+          /* backface-visibility: hidden; */
+          /* 裏面を表示 */
+        }
+
+        .css-forward {
+          /* 前面の指定 */
+
+          transform: translateZ(50px);
+          background: silver;
+        }
+
+        .css-reverse {
+          /* 後面の指定 */
+          transform: rotateY(180deg) translateZ(50px);
+          background: lime;
+        }
+
+        .css-right {
+          /* 右面の指定 */
+          background: red;
+          transform: rotateY(90deg) translateZ(-50px);
+        }
+
+        .css-left {
+          /* 左面の指定 */
+          background: aqua;
+          transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .css-top {
+          /* 上面の指定 */
+          background: yellow;
+          transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .css-bottom {
+          /* 下面の指定 */
+          background: fuchsia;
+          transform: rotateX(-90deg) translateZ(50px);
+        }
+      </style>
+
+    </div>
+
+    <!-- sample2 -->
+    <div class="sample2">
+      <div>
+        箱の蓋を開けるような・厚みのある蓋をトップ基準に回転させる。
+      </div>
+
+
+      <div class="box">
+
+        <div class="cover">
+          <div class="cover-top">表</div>
+          <div class="cover-front"></div>
+          <div class="cover-back"></div>
+          <div class="cover-under"></div>
+          <div class="cover-left"></div>
+          <div class="cover-right"></div>
+        </div>
+
+
+        <div class="body">
+          <div class="body-top"></div>
+          <div class="body-front"></div>
+          <div class="body-back"></div>
+          <div class="body-under">中</div>
+          <div class="body-left"></div>
+          <div class="body-right"></div>
+        </div>
+
+      </div>
+
+      <style>
+        .box {
+          /* transform-origin: top; */
+          transform: rotateY(-45deg) translateY(300px) rotateX(45deg);
+          transform-style: preserve-3d;
+          width: 300px;
+          height: 300px;
+          animation: rotateBox 1.5s ease-in-out infinite;
+        }
+
+        @keyframes rotateBox {
+          100% {
+            /* transform: rotateY(-30deg) rotateX(330deg) rotateZ(10deg); */
+            transform: rotateY(0deg) translateY(100px) rotateX(20deg);
+          }
+
+        }
+
+        .cover {
+          /* position: relative; */
+          transform-origin: top;
+          transform-style: preserve-3d;
+          transform: rotateX(30deg);
+          animation: openCover 1.5s ease-in-out infinite;
+
+        }
+
+        @keyframes openCover {
+
+          100% {
+            /* transform: rotateY(-30deg) rotateX(330deg) rotateZ(10deg); */
+            transform: rotateX(180deg);
+          }
+        }
+
+
+
+        .cover-top {
+          width: 300px;
+          height: 300px;
+          background-color: cadetblue;
+          border: 1px solid #ddd;
+          transform: translateZ(10px)
+        }
+
+        .cover-front {
+          width: 300px;
+          height: 10px;
+          background-color: black;
+          transform-origin: top;
+          transform: rotateX(90deg);
+          border: 1px solid #ddd;
+        }
+
+        .cover-back {
+          width: 300px;
+          height: 10px;
+          background-color: yellow;
+          position: absolute;
+          top: 0;
+          transform-origin: top;
+          transform: rotateX(90deg);
+          border: 1px solid #ddd;
+        }
+
+        .cover-under {
+          position: absolute;
+          top: 0;
+
+          width: 300px;
+          height: 300px;
+          background-color: coral;
+          /* transform: translateZ(0px); */
+          border: 1px solid #ddd;
+        }
+
+        .cover-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 10px;
+          height: 300px;
+          background-color: gray;
+          border: 1px solid #ddd;
+          transform-origin: left;
+          transform: rotateY(-90deg);
+        }
+
+        .cover-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 10px;
+          height: 300px;
+          background-color: red;
+          border: 1px solid #ddd;
+          transform-origin: right;
+          transform: rotateY(90deg);
+
+        }
+
+        /* bottom */
+        .body {
+          /* position: relative; */
+          position: absolute;
+          top: 0;
+          transform-origin: top;
+          transform-style: preserve-3d;
+          transform: rotateX(30deg) translateZ(-100px);
+
+        }
+
+        .body-top {
+          width: 300px;
+          height: 300px;
+          /* background-color: cadetblue; */
+          border: 1px solid #ddd;
+          transform: translateZ(100px)
+        }
+
+        .body-front {
+          width: 300px;
+          height: 100px;
+          background-color: black;
+          transform-origin: top;
+          transform: rotateX(90deg);
+          border: 1px solid #ddd;
+        }
+
+        .body-back {
+          width: 300px;
+          height: 100px;
+          background-color: yellow;
+          position: absolute;
+          top: 0;
+          transform-origin: top;
+          transform: rotateX(90deg);
+          border: 1px solid #ddd;
+        }
+
+        .body-under {
+          position: absolute;
+          top: 0;
+
+          width: 300px;
+          height: 300px;
+          background-color: coral;
+          /* transform: translateZ(0px); */
+          border: 1px solid #ddd;
+        }
+
+        .body-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 300px;
+          background-color: gray;
+          border: 1px solid #ddd;
+          transform-origin: left;
+          transform: rotateY(-90deg);
+        }
+
+        .body-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100px;
+          height: 300px;
+          background-color: red;
+          border: 1px solid #ddd;
+          transform-origin: right;
+          transform: rotateY(90deg);
+
+        }
+      </style>
+    </div>
+
+  </div>
+</body>
+
+</html>
