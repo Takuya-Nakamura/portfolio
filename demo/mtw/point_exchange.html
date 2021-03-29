@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <link rel='stylesheet' href='./point_exchange.css'>
+    <script src='https://medical-tribune.co.jp/js/jquery.min.js'></script>
+
+</head>
+
+<body>
+    <main>
+        <div id='point-exchange'>
+            <div class='page'>
+                <h1>Modal Test</h1>
+                <button class='open-modal' data-target='modal-1'> Modalを開く</button>
+
+                <div class='current-point'>
+                    <div><span>現在の保有ポイント</span></div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Modal -->
+            <div id='modal-1' class='modal-background modal'>
+                <div class='modal-body'>
+                    <div class='modal-header'>
+                        <div class='modal-close'> <a>×</a> </div>
+                    </div>
+
+                    <div class='modal-content'>
+                        <div class='point-logo'>
+                            <img src='./img/amazon_logo.png'>
+                        </div>
+
+                        <div class='point-title'>
+                            <span>Amazonギフト件(デジタルコード)</span>
+                        </div>
+
+                        <div class='current-point-title'>
+                            <span class='sub-title'>現在の保有ポイント</span>
+                        </div>
+
+                        <div class='current-point'>
+                            <div class='current-point__point'>
+                                <span>98,000</span>
+                                <span>point</span>
+                            </div>
+                            <div class='current-point__expiration'>
+                                <span>ポイント有効期限：2021年12月末日まで</span>
+                            </div>
+                        </div>
+
+                        <div class='notice'>
+                            <div class='notice__label'><span class='sub-title'>ご確認事項</span></div>
+
+                            <div class='notice__list'>
+                                <ul>
+                                    <li>ポイント取得申請後翌月末頃にマイページを確認ください </li>
+                                    <li>ギフト券（デジタルコード）はマイページの履歴からご確認いただけます </li>
+                                    <li>交換申請後の取り消しは出来かねます </li>
+                                    <li>ギフトコードを受け取り前に退会した場合は失効する場合がございます</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--notice-->
+
+
+                        <div class='exchange'>
+                            <div class='exchange__sub_title'><span class='sub-title'>ポイント交換</span></div>
+                            <div class='exchange__text'><img src='./img/icon_acquired.png'><span>交換レート</span></div>
+                            <div class='exchange__rate_text'><span>1point ＝ Amazonギフト 1 円相当</span></div>
+
+                            <!-- ここが出し分けポイント 1 -->
+                            <div class='exchange__form'>
+                                <form>
+                                    <select name='' id=''>
+                                        <option value=''>ご選択ください</option>
+                                        <option value=''>1000円</option>
+                                        <option value=''>2000円</option>
+                                        <option value=''>3000円</option>
+                                        <option value=''>4000円</option>
+
+                                    </select>
+                                    <div class='submit'><a href='#'>ポイント交換する > </a></div>
+                                </form>
+                            </div><!-- form -->
+
+                        </div><!-- exchange -->
+
+
+                        <div class='line'></div>
+
+                        <div class='description'>
+                            ●Amazonギフトについて<br><br>
+                            ・ポイントは、1ポイント＝1円相当です。<br>
+                            ・Amazonギフト券への交換は、100P（100円）から可能です。<br>
+                            ・Amazonギフト券の登録には有効期限がございます。<br>
+                            ・Amazonギフト券細則についてはこちらをご確認ください。 <br>
+                            ・Amazon.co.jpは、本プログラムのスポンサーではありません。<<br>
+                                ・Amazon、Amazon.co.jp、およびそのロゴはAmazon.com,inc.またはその関連会社の商標です。</li>
+                        </div>
+
+                    </div>
+                    <!--modal-content-->
+
+
+
+                </div><!-- modal-body -->
+            </div><!-- modal-1-->
+
+
+        </div><!-- #point-exchange-->
+
+
+    </main>
+
+    <script>
+        $(function () {
+            $('.open-modal').each(function () {
+                $(this).on('click', function () {
+                    var target = $(this).data('target');
+                    var modal = document.getElementById(target);
+                    $(modal).fadeIn();
+                    return false;
+                });
+            });
+
+            $('.modal-close').on('click', function () {
+                $('.modal-background').fadeOut();
+                return false;
+            });
+        })
+    </script>
+</body>
+
+</html>

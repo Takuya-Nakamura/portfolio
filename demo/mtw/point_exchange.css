@@ -1,0 +1,153 @@
+#point-exchange {
+  color: #333333;
+}
+
+#point-exchange .modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  text-align: center;
+  /* display: none; */
+}
+
+#point-exchange .modal .modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 4px;
+  width: 60%;
+  min-width: 450px;
+  min-height: 450px;
+}
+
+#point-exchange .modal .modal-header {
+  width: 100%;
+  height: 40px;
+  background-color: #f44336;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+#point-exchange .modal .modal-close {
+  margin-right: 20px;
+}
+#point-exchange .modal .modal-close a {
+  font-size: 30px;
+  color: #dfdfdf;
+}
+#point-exchange .modal .modal-content {
+  padding: 0 50px 35px;
+}
+
+#point-exchange .modal .point-title {
+  display: inline-block;
+  padding: 0px 10px;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 50px;
+}
+#point-exchange .modal .point-title span {
+  font-size: 24px;
+  margin: 0;
+}
+
+#point-exchange .modal .current-point-title {
+  margin-bottom: 20;
+}
+
+#point-exchange .modal .sub-title {
+  font-size: 20px;
+}
+
+#point-exchange .modal .current-point-title span {
+  font-size: 20px;
+  margin: 0;
+}
+
+#point-exchange .modal .current-point {
+  background-color: #2e59a0;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+#point-exchange .modal .current-point__point {
+  color: white;
+  font-size: 39px;
+}
+#point-exchange .modal .current-point__expiration {
+  display: inline-block;
+  padding: 3px 6px;
+  background-color: white;
+  font-size: 14px;
+  color: #cc0000;
+}
+
+#point-exchange .modal .notice {
+  box-shadow: 0px 3px 6px #00000029;
+  border: 3px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 15px 10px 10px;
+  margin-bottom: 30px;
+}
+
+#point-exchange .modal .notice__list ul {
+  text-align: left;
+}
+#point-exchange .modal .notice__list li {
+  font-size: 14px;
+  color: #cc0000;
+}
+
+#point-exchange .modal .exchange__sub_title {
+  margin-bottom: 21px;
+}
+
+#point-exchange .modal .exchange__text {
+  color: #797979;
+  text-align: center;
+  font-size: 16px;
+}
+
+#point-exchange .modal .exchange__text img {
+  width: 16px;
+  height: 16px;
+}
+#point-exchange .modal .exchange__rate_text {
+  color: #f44336;
+  text-align: center;
+  font-size: 16px;
+}
+#point-exchange .modal .exchange__form {
+  margin-top: 25px;
+}
+#point-exchange .modal .exchange__form select {
+  min-width: 300px;
+  margin-bottom: 25px;
+}
+
+#point-exchange .modal .line {
+  border: 1px solid #707070;
+}
+
+#point-exchange .modal .description {
+  margin-top: 33px;
+  text-align: left;
+  font-size: 14px;
+}
+
+
+
+
+/*********  page側 *********/

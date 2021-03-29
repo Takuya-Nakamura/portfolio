@@ -1,0 +1,427 @@
+<body>
+    <main>
+        <div id="ui">
+            <div class="spin">
+                <div class="spin_ball"></div>
+                <div class="spin_ball"></div>
+                <div class="spin_ball"></div>
+                <div class="spin_ball"></div>
+                <div class="spin_ball"></div>
+            </div>
+        </div>
+
+
+    </main>
+    <style>
+        main {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+
+        body {
+            background: #000;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #ui .spin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            margin: -300px 0 0 -300px;
+            background: #000;
+            filter: blur(10px) contrast(30);
+            animation: spin 8000ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        #ui .spin_ball {
+            position: absolute;
+            top: 50%;
+            left: 150px;
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            border-radius: 100%;
+            transform-origin: 150px 50%;
+        }
+
+        #ui .spin_ball:nth-child(1) {
+            transform: rotateZ(72deg);
+            animation: ball_1 17531ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        #ui .spin_ball:nth-child(2) {
+            transform: rotateZ(144deg);
+            animation: ball_2 14717ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        #ui .spin_ball:nth-child(3) {
+            transform: rotateZ(216deg);
+            animation: ball_3 13214ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        #ui .spin_ball:nth-child(4) {
+            transform: rotateZ(288deg);
+            animation: ball_4 13265ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        #ui .spin_ball:nth-child(5) {
+            transform: rotateZ(360deg);
+            animation: ball_5 17650ms infinite alternate cubic-bezier(0.545, 0.08, 0.52, 0.975);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(359deg);
+            }
+        }
+
+        @keyframes ball_1 {
+            0% {
+                width: 262px;
+                height: 200px;
+                background: #a58337;
+            }
+
+            10% {
+                width: 282px;
+                height: 222px;
+                background: #2eecc0;
+            }
+
+            20% {
+                width: 101px;
+                height: 223px;
+                background: #bfa99d;
+            }
+
+            30% {
+                width: 69px;
+                height: 226px;
+                background: #49cf4b;
+            }
+
+            40% {
+                width: 169px;
+                height: 44px;
+                background: #ddf7c9;
+            }
+
+            50% {
+                width: 104px;
+                height: 153px;
+                background: #d91b84;
+            }
+
+            60% {
+                width: 217px;
+                height: 275px;
+                background: #5e42f1;
+            }
+
+            70% {
+                width: 166px;
+                height: 151px;
+                background: #91392b;
+            }
+
+            80% {
+                width: 198px;
+                height: 140px;
+                background: #905e51;
+            }
+
+            90% {
+                width: 251px;
+                height: 127px;
+                background: #11e343;
+            }
+
+            100% {
+                width: 172px;
+                height: 168px;
+                background: #b2c2d9;
+            }
+        }
+
+        @keyframes ball_2 {
+            0% {
+                width: 182px;
+                height: 221px;
+                background: #1fd8e5;
+            }
+
+            10% {
+                width: 132px;
+                height: 42px;
+                background: #b6a446;
+            }
+
+            20% {
+                width: 111px;
+                height: 279px;
+                background: #3730e0;
+            }
+
+            30% {
+                width: 120px;
+                height: 298px;
+                background: #72e399;
+            }
+
+            40% {
+                width: 73px;
+                height: 202px;
+                background: #97e2fd;
+            }
+
+            50% {
+                width: 173px;
+                height: 232px;
+                background: #3643b6;
+            }
+
+            60% {
+                width: 176px;
+                height: 67px;
+                background: #26495d;
+            }
+
+            70% {
+                width: 182px;
+                height: 245px;
+                background: #24afb0;
+            }
+
+            80% {
+                width: 56px;
+                height: 270px;
+                background: #a0681c;
+            }
+
+            90% {
+                width: 282px;
+                height: 157px;
+                background: #3532ec;
+            }
+
+            100% {
+                width: 219px;
+                height: 132px;
+                background: #ee321b;
+            }
+        }
+
+        @keyframes ball_3 {
+            0% {
+                width: 199px;
+                height: 256px;
+                background: #dfdd68;
+            }
+
+            10% {
+                width: 267px;
+                height: 85px;
+                background: #f85dc0;
+            }
+
+            20% {
+                width: 160px;
+                height: 151px;
+                background: #de4172;
+            }
+
+            30% {
+                width: 46px;
+                height: 105px;
+                background: #578126;
+            }
+
+            40% {
+                width: 215px;
+                height: 285px;
+                background: #8070a9;
+            }
+
+            50% {
+                width: 123px;
+                height: 175px;
+                background: #17f008;
+            }
+
+            60% {
+                width: 151px;
+                height: 162px;
+                background: #21ed36;
+            }
+
+            70% {
+                width: 191px;
+                height: 92px;
+                background: #761fc1;
+            }
+
+            80% {
+                width: 179px;
+                height: 129px;
+                background: #5cc602;
+            }
+
+            90% {
+                width: 200px;
+                height: 69px;
+                background: #5c9efd;
+            }
+
+            100% {
+                width: 52px;
+                height: 233px;
+                background: #354760;
+            }
+        }
+
+        @keyframes ball_4 {
+            0% {
+                width: 50px;
+                height: 272px;
+                background: #56b27c;
+            }
+
+            10% {
+                width: 149px;
+                height: 110px;
+                background: #556168;
+            }
+
+            20% {
+                width: 118px;
+                height: 298px;
+                background: #9891b4;
+            }
+
+            30% {
+                width: 163px;
+                height: 291px;
+                background: #69d47c;
+            }
+
+            40% {
+                width: 199px;
+                height: 242px;
+                background: #c043d9;
+            }
+
+            50% {
+                width: 126px;
+                height: 212px;
+                background: #d3f123;
+            }
+
+            60% {
+                width: 107px;
+                height: 206px;
+                background: #306ec8;
+            }
+
+            70% {
+                width: 172px;
+                height: 114px;
+                background: #6f4922;
+            }
+
+            80% {
+                width: 183px;
+                height: 243px;
+                background: #c6429a;
+            }
+
+            90% {
+                width: 75px;
+                height: 53px;
+                background: #6a72de;
+            }
+
+            100% {
+                width: 88px;
+                height: 290px;
+                background: #6fcfd5;
+            }
+        }
+
+        @keyframes ball_5 {
+            0% {
+                width: 230px;
+                height: 259px;
+                background: #b872f2;
+            }
+
+            10% {
+                width: 228px;
+                height: 138px;
+                background: #4381ea;
+            }
+
+            20% {
+                width: 65px;
+                height: 61px;
+                background: #2a1f02;
+            }
+
+            30% {
+                width: 240px;
+                height: 289px;
+                background: #a82ff6;
+            }
+
+            40% {
+                width: 191px;
+                height: 237px;
+                background: #339c3a;
+            }
+
+            50% {
+                width: 132px;
+                height: 81px;
+                background: #d7b4fe;
+            }
+
+            60% {
+                width: 90px;
+                height: 144px;
+                background: #a38b19;
+            }
+
+            70% {
+                width: 200px;
+                height: 165px;
+                background: #f7af85;
+            }
+
+            80% {
+                width: 180px;
+                height: 115px;
+                background: #2ef3ee;
+            }
+
+            90% {
+                width: 173px;
+                height: 234px;
+                background: #934fbf;
+            }
+
+            100% {
+                width: 147px;
+                height: 89px;
+                background: #ec112a;
+            }
+        }
+    </style>
+
+</body>

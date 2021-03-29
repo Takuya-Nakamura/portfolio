@@ -1,0 +1,268 @@
+<body>
+    <main>
+
+        <div>
+            <h2>buttonクリック・ハートキラキラ</h2>
+            <a href="https://ics.media/entry/15970/">参考</a>
+
+            <div>
+                ハートを押したときのプルプルとしたアクションを実現する。
+                できれば波紋も。
+                <ul>
+                    <li>ハートに色がつく</li>
+                    <li>最後に縦に上がり、下がる(浮いて着地のイメージ)。</li>
+                    <li>最後に震える・ぷるるんという感じ</li>
+                    <li>波紋が広がり、消える。</li>
+                    <li>戻るときのアニメーションも設定する</li>
+                </ul>
+
+                
+            </div>
+
+            <svg id='svg-heart' height='500px' width='500px' viewBox="0 0 500 500">
+                <path onClick='onClickHeart(this);' class="heart" 
+                    d="M250,187.4c-31.8-47.8-95.5-19.8-95.5,32.2c0,35.2,31.8,60.3,55.7,79.2c24.9,19.7,31.8,23.9,39.8,31.8 c7.9-7.9,14.6-12.6,39.8-31.8c24.3-18.5,55.7-44.4,55.7-79.6C345.5,167.6,281.8,139.7,250,187.4z">
+                </path>
+                <circle class="explosion circle" r="150" cx="250" cy="250"></circle>
+            </svg>
+
+            <p>やってみて気になったこと。SVGのファイル(特にサイズ)が変わると、アクションの中心なども調整する必要があるので、なかなか。サイズや余白の調整はViewBoxを活用するのが良いかも</p>
+
+            <script>
+                onClickHeart = (e) => {
+                    console.log("onClickHeart")
+                    
+                    const svg = e.closest('svg')
+                    console.log("classList", svg.classList)
+
+                    if (svg.classList.contains('clicked') == true) {
+                        svg.classList.remove('clicked')
+                        svg.classList.add('unClicked')
+                    } else {
+                        svg.classList.add('clicked')
+                        svg.classList.remove('unClicked')
+                    }
+                }
+
+                // onClickHeart = (e) => {
+                //     console.log("onClickHeart")
+                //     console.log("classList", e.classList)
+                //     const svg = e.closest('svg')
+                //     if (e.classList.contains('clicked') == true) {
+                //         e.classList.remove('clicked')
+                //         e.classList.add('unClicked')
+                //     } else {
+                //         e.classList.add('clicked')
+                //         e.classList.remove('unClicked')
+                //     }
+                // }
+
+            </script>
+
+            <style>
+                /**************************************************
+                 * Heart が震えるアクション
+                 ***************************************************/
+                .heart {
+                    fill: rgba(6, 6, 6, 0.24);
+                    stroke: rgba(6, 6, 6, 0.24);
+                    transform-origin: 250px 250px;
+                    transform: scale(0.8);
+                }
+
+                .clicked .heart  {
+                    /* fill: rgba(250, 100, 100, 0.24);
+                    stroke: red; */
+                    animation: heartAnime 800ms;
+                    animation-fill-mode: forwards;
+                    /* animation-fill-mode:backwards; */
+                }
+
+                .unClicked .heart  {
+                    animation: heartAnimeReverse 300ms;
+                    animation-fill-mode: forwards;
+
+                }
+
+                /* ハートのアニメーション */
+                @keyframes heartAnime {
+                    0% {
+                        /* transform: scale(0);
+                        fill: #E2264D; */
+                    }
+
+                    39% {
+                        /* transform: scale(0); */
+                    }
+
+                    60% {
+                        /* 大きめに広げる */
+                        transform: scale(1.2, 1.2);
+                    }
+
+                    70% {
+                        /* translateで上に浮く */
+                        transform: scale(1, 1) translate(0%, -10%);
+                    }
+
+                    75% {
+                        /* scaleで横長・縦長に変形、translateでおちる */
+                        transform: scale(1.1, 0.9) translate(0%, 5%);
+                    }
+
+                    80% {
+                        /* scaleで縦長・横長 translateでおちる*/
+                        transform: scale(0.95, 1.05) translate(0%, -3%);
+                    }
+
+                    100% {
+                        /* 着地 */
+                        transform: scale(1.0, 1.0) translate(0%, 0%);
+                        fill: #E2264D;
+                    }
+                }
+
+                /* ハートのアニメーション 戻る*/
+                @keyframes heartAnimeReverse {
+
+                    /* 普通のアニメーションの最後と同じにしておく */
+                    0% {
+                        transform: scale(1.0, 1.0) translate(0%, 0%);
+                        fill: #E2264D;
+                    }
+
+                    100% {
+                        transform: scale(0.8, 0.8);
+                        fill: rgba(6, 6, 6, 0.24);
+                    }
+                }
+            </style>
+
+            <style>
+                /**************************************************
+                 * クリック時の波紋アクション
+                 ***************************************************/
+
+                .explosion {
+                    transform-origin: 250px 250px;
+                    transform: scale(0.02);
+                    stroke: rgba(221, 70, 136, 1);
+                    fill: none;
+                    opacity: 0;
+                    stroke-width: 1;
+                }
+                .clicked .explosion {
+                    animation: explosionAnime 800ms;
+   
+                }
+                @keyframes explosionAnime {
+                    0% {
+                        opacity: 0;
+                        transform: scale(0.01);
+                    }
+
+                    1% {
+                        opacity: 1;
+                        transform: scale(0.01);
+                    }
+
+                    5% {
+                        stroke-width: 200;
+                    }
+
+                    20% {
+                        stroke-width: 300;
+                    }
+
+                    50% {
+                        stroke: rgba(204, 142, 245, 1);
+                        transform: scale(1.1);
+                        stroke-width: 1;
+                    }
+
+                    50.1% {
+                        stroke-width: 0;
+                    }
+
+                    100% {
+                        stroke: rgba(204, 142, 245, 1);
+                        transform: scale(1.1);
+                        stroke-width: 0;
+                    }
+                }
+            </style>
+
+        </div>
+
+
+
+        <div>
+            <a href="https://deshinon.com/2019/03/02/simple-button-css/">ボタンアニメーション コレクション</a>
+
+            これ一通りやり方を理解したい
+
+            これのパスも理解したい
+            https://codepen.io/andrewwierzba/pen/JorzzV
+            https://codepen.io/mars2601/pen/MKVNMX
+
+            これぐらいがシンプルかも
+            https://codepen.io/nicholaspetersen/pen/mEmOjb
+        </div>
+
+
+
+        <div>
+            <h2>他、気になったものメモ</h2>
+            <ul>
+                <li><a href='https://codepen.io/search/pens?q=chart+animation'>Chart Animation</a></li>
+                <li><a href='https://codepen.io/search/pens?q=chart++svg'>Chart Svg</a></li>
+                <li><a href='https://codepen.io/MyXoToD/pen/yyKZaj'>地図上に描画</a></li>
+                <li><a href='https://codepen.io/juliangarnier/pen/idhuG'>宇宙・惑星</a></li>
+            </ul>
+        </div>
+
+
+        <div class='sample sample4'>
+            <h2>セレクトボタンを押したときのアクション・サンプル</h2>
+            <p>https://kodocode.net/design-css-radiobutton/</p>
+            <p>https://kodocode.net/design-css-checkbox/</p>
+            以下のアニメーションがいいかも...
+            <p>https://codepen.io/theigmo87/pen/cwHyK</p>
+            <p>https://codepen.io/north-of-rapture/pen/rWqega</p>
+            <p>https://codepen.io/mprquinn/pen/wdrQzO</p>
+            <p>https://codepen.io/BjornRombaut/pen/pyLMxY</p>
+            <p>https://codepen.io/shshaw/pen/WXMdwE</p>
+        </div>
+        <!-- 
+            <p>https://codepen.io/chrisota/pen/rpaLw</p>
+            <p>https://codepen.io/juanjofr/pen/gjbvx</p>
+            <p>https://codepen.io/TimGuignard/pen/pRKdvV</p>        
+        -->
+
+        <div class='sample sample4'>
+            <h2>TextForm アニメーション</h2>
+            参考サイト
+            <p>https://kodocode.net/design-css-textbox/</p>
+            <p>https://codepen.io/stefcharle/pen/JKxgxm</p>
+            <p>https://codepen.io/MichaelArestad/pen/ohLIa</p>
+            <p>https://codepen.io/jaycbrf/pen/iBszr</p>
+            <p>https://codepen.io/andiio/pen/tFECp</p>
+
+            <h3>フォーカスがアニメーションして動く</h3>
+            <p>https://codepen.io/tobiasglaus/pen/LYENmqO</p>
+
+            <h3>文字自体にアニメーション</h3>
+            <p>https://codepen.io/airnan/pen/JbOrbV</p>
+            <p>https://codepen.io/andyNroses/pen/pbBWBL</p>
+        </div>
+
+    </main>
+    <style>
+        main {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+    </style>
+    
+</body>
