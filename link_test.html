@@ -22,12 +22,20 @@
 
 </head>
 
+<script>
+  onClick = () =>{
+    alert(1)
+  }
+</script>
 <body>
   <div id="wrapper">
-    <!- 
+    
+    <h2>アプリ内ブラウザから</h2>
+
+    
     <h2>DeepLinkテスト</h2>
-    <div><a href="jp.audiobook://launch/user/membership/options/unlimited">本番 LP jp.audiobook</a></div>
-    <div><a href="jp.audiobook.dev://launch/user/membership/options/unlimited">本番 LP jp.audiobook.dev</a></div>
+    <div><a href="jp.audiobook://launch/user/membership/options/unlimited">本番LP jp.audiobook</a></div>
+    <div><a href="jp.audiobook.dev://launch/user/membership/options/unlimited" onclick="onClick()">開発LP jp.audiobook.dev</a></div>
     <!-- <div><a href="jp.audiobook.dev://launch/user/membership/options/unlimited">開発 LP</a></div> -->
     
 
