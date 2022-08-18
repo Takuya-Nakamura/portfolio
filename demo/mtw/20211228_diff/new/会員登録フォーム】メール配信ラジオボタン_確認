@@ -1,0 +1,6 @@
+<mtsetvarblock name='full_field_name'>customfield_<mtvar name='field_name'>__c</mtsetvarblock>
+<dt><mtvar name='title'></dt>            
+<dd>
+    <mt:If name="$full_field_name" eq="1">購読<mt:Else>停止</mt:If>
+    <input type="hidden" name="<mtvar name='full_field_name'>" value="<mtvar name='$full_field_name' encode_html='1' >">
+</dd>

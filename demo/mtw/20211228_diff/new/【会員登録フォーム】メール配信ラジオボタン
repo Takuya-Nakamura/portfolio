@@ -1,0 +1,14 @@
+<mtsetvarblock name='full_field_name'>customfield_<mtvar name='field_name'>__c</mtsetvarblock>
+
+<div class="row clearfix">
+    <label class="h"><mtvar name='title'><span class="icon-h">必須</span></label>
+     <div class="r">
+         <div class="group-color-red required-group">         
+             <div class="icheck">
+               <label><input id="<mtvar name='full_field_name'>__1" name="<mtvar name='full_field_name'>" type="radio" value="1" <mt:if name="$full_field_name" eq="1">checked="checked"</mt:if> /> &nbsp;購読</label>
+               &nbsp;&nbsp;
+               <label><input id="<mtvar name='full_field_name'>__2" name="<mtvar name='full_field_name'>" type="radio" value="0" <mt:if name="$full_field_name" ne="1">checked="checked"</mt:if> /> &nbsp;停止</label>
+             </div>
+         </div>
+     </div>
+</div>

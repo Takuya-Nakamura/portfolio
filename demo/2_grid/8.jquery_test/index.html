@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  
+    <h2>ファイル添付取得時に値をセットする</h2>
+    <input type="file" name="" id="file_form">
+
+    <div id='text'> ファイルが添付されていません</div>
+
+  </body>
+
+
+  <script>
+    $(()=>{
+      console.log('script start')
+      $('#file_form').change(()=>{
+        var image_ = $('#file_form').prop('files')[0]; 
+
+        if(image_){
+          $('#text').text(`ファイル名: ${image_['name']}`);
+        }else{
+          $('#text').text('ファイルが添付されてません')
+        }
+        console.log(image_)
+
+      })
+    })
+  </script>
+</html>
