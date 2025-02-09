@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>OIDCテスト</h1>
+  <button id="login">MT_Cognitoでログイン</button>
+  <button id="logout">ログアウト(Firebaseのセッションクリア、 Cognitoは残る)</button>
+  <button id="logoutCognito">ログアウト(Cognitoのセッションクリア)</button>
+  <p id="loginStatus"></p>
+  <p id="userInfo"></p>
+  <p id="token"></p>
+
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous" defer></script>
+  <script type="module" src="./index.js" defer></script>
+
+</body>
+</html>
