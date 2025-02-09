@@ -117,7 +117,7 @@ logoutCognitoButton.addEventListener('click', async () => {
     // Cognito のログアウト URL にリダイレクト
     const cognitoDomain = "https://ap-southeast-2zzohhtrgf.auth.ap-southeast-2.amazoncognito.com";
     const clientId = "3561nchukga9t8htp2cef30s8j";
-    const logoutRedirectUri = "http://localhost:5002/auth/provider_login_cognito_mt";
+    const logoutRedirectUri = "https://takuya-nakamura.github.io/portfolio/oidc/index.html";
 
     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutRedirectUri)}`;
 
