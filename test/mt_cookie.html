@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Cross-Site Cookie Test</title>
+</head>
+<body>
+  <h1>Aサイト</h1>
+  <button id="loginBtn">Bサイトにログイン</button>
+
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      fetch("https://b.localhost:5000/login", {
+        method: "POST",
+        credentials: "include", // ← Cookie受け取りに必須
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username: "takuya", password: "secret" })
+      })
+      .then(res => res.text())
+      .then(data => {
+        alert("Response from B site: " + data);
+      })
+      .catch(err => {
+        console.error("Error:", err);
+      });
+    });
+  </script>
+</body>
+</html>
