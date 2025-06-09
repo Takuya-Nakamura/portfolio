@@ -10,8 +10,9 @@
 
   <script>
     document.getElementById('loginBtn').addEventListener('click', () => {
-      fetch("https://b.localhost:5000/login", {
-        method: "POST",
+      console.log('"🌟🌟login');
+      fetch("http://localhost:5002/auth/", {
+        method: "GET",
         credentials: "include", // ← Cookie受け取りに必須
         headers: {
           "Content-Type": "application/json"
@@ -23,6 +24,7 @@
         alert("Response from B site: " + data);
       })
       .catch(err => {
+        alert("Error: " + err);
         console.error("Error:", err);
       });
     });
