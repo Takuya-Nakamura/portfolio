@@ -11,7 +11,7 @@
   <script>
     document.getElementById('loginBtn').addEventListener('click', () => {
       console.log('"🌟🌟login');
-      fetch("http://localhost:5002/auth/", {
+      fetch("http://localhost:5002/auth/mt_cookie", {
         method: "GET",
         credentials: "include", // ← Cookie受け取りに必須
         headers: {
