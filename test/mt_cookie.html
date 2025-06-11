@@ -7,16 +7,41 @@
 <body>
   <h1>Aサイト</h1>
   <button id="loginBtn">Bサイトにログイン</button>
-
+  <input type="text" id="email" >
   <script>
     document.getElementById('loginBtn').addEventListener('click', () => {
-      console.log('"🌟🌟login');
-      fetch("https://localhost:5002/auth/mt_cookie", {
-        method: "GET",
-        credentials: "include", // ← Cookie受け取りに必須
+      email = document.getElementById('email').value
+      console.log('"🌟🌟login', email);
+
+      fetch('http://localhost:5002/auth/create_account_at_once', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
+        body: JSON.stringify({
+          email: email,
+          user_pswd: "Kyougoku0803@",
+          last_name: "中村",
+          first_name: "拓也",
+          birthday_year: 1989,
+          birthday_month: 1,
+          birthday_day: 1,
+          first_name_kana: "なかむら",
+          last_name_kana: "たくや",
+          nick_name: "たく",
+          medical_area: "100",
+          work_zip: "100-0001",
+          work_pref: "神奈川県",
+          work_city: "川崎市",
+          work_area: "幸区",
+          work_facility: "施設",
+          work_department: "部署",
+          license_number: "999",
+          gender: "1",
+          working_style: 1,
+          stat_flag: "2",
+          mst_member_class_id: 2
+        })
       })
       .then(res => res.text())
       .then(data => {
